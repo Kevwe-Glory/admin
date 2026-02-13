@@ -12,7 +12,7 @@ export async function POST(req: Request) {
         body: JSON.stringify({ email, password }),
       },
     );
-    console.log('API BASE URL:', process.env.NEXT_PUBLIC_API_BASE_URL);
+    console.log('API BASE URL:', process.env);
 
     const json = await res.json();
 
