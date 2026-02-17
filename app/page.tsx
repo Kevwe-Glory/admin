@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { toast } from "sonner"
+import { ADMIN_API_BASE_URL } from "@/lib/constants"
 
 export default function AdminLoginPage() {
   const router = useRouter()
@@ -20,7 +21,7 @@ export default function AdminLoginPage() {
     setLoading(true)
 
     try {
-      const res = await fetch("/api/admin/login", {
+      const res = await fetch(`${ADMIN_API_BASE_URL}api/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

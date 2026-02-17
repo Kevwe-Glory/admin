@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
+import { ADMIN_API_BASE_URL } from '@/lib/constants';
 
 export async function GET(
   _req: Request,
@@ -29,7 +30,7 @@ export async function GET(
     console.log('🌍 Proxying request to backend');
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}bookings/${bookingId}`,
+      `${ADMIN_API_BASE_URL}bookings/${bookingId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

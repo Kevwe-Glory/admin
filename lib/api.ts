@@ -5,8 +5,7 @@ import {
   FetchFlightPaymentParams,
   FetchFlightsBookingParams,
 } from '@/types/api_booking';
-
-const ADMIN_API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+import { ADMIN_API_BASE_URL } from './constants';
 
 export async function login(
   email: string,

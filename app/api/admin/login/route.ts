@@ -1,3 +1,4 @@
+import { ADMIN_API_BASE_URL } from '@/lib/constants';
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
@@ -5,7 +6,7 @@ export async function POST(req: Request) {
     const { email, password } = await req.json();
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}auth/sign-in`,
+      `${ADMIN_API_BASE_URL}auth/sign-in`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
